@@ -5,7 +5,15 @@ pyFINT is a Python implementation of the FINT (Find INdividual Trees) tool from 
 
 ## TL;DR
 `docker build --rm -t pyfint .`
+
+Linux
 `docker run --rm -v $(pwd)/output:/pyfint/output -ti pyfint`
+
+Windows CMD
+`docker run --rm -v %cd%\output:/pyfint/output -ti pyfint`
+
+Universal
+`docker run --rm -v ${PWD}/output:/pyfint/output -it pyfint`
 
 ## Usage
 The program has been written for Python 3.x. See requirements.txt for dependencies. The classes of the python version were kept close to the original C++ implementation. Their use is therefore not necessarily very pythonic. Details about the FINT algorithm and the program outputs can be found in the original tool's user manual: https://www.ecorisq.org/docs/FINT_manual_EN.pdf. Compared to the original version, pyFINT only supports normalized surface models in the GeoTIFF or Esri ASCII format as input and it doesn't support the calculation of a normalized surface model form a surface and terrain model. Additionally, pyFINT supports optional resizing and gauss filtering of the surface model, not yet available in the original C++ program. The example_main.py shows examples for the most common use cases of pyFINT.
