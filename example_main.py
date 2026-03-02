@@ -31,8 +31,12 @@ if __name__ == "__main__":
 
     # Demodata
     #nsm_file = os.path.join(os.getcwd(), "sample_data/VHM_1m.tif")
-    # Schwamendingen
-    nsm_file = os.path.join(os.getcwd(), "sample_data/normalized_2685-1250_0.5_2056_5728.tif")
+    # Example Schwamendingen
+    # nsm_file = os.path.join(os.getcwd(), "sample_data/normalized_2685-1250_0.5_2056_5728.tif")
+
+    # Real-world-data
+    # Thunersee reduced to AOI
+    nsm_file = os.path.join(os.getcwd(), "sample_data/normalized.tif")
 
     #
     # Standard Detection with 1m input VHM without resizing of filtering
