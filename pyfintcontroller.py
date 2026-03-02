@@ -20,6 +20,8 @@ import numpy as np
 from scipy.ndimage import convolve
 from scipy import signal
 
+from scipy.signal.windows import gaussian
+
 import rasterio
 from rasterio import windows
 
@@ -335,7 +337,16 @@ class pyFintController:
                 self.m_output_suffix = "{0}_gauss_sigma{1}_size{2}".format(self.m_output_suffix,self.m_filter_sigma,self.m_filter_size)
 
 
-            gkern1d = signal.gaussian(self.m_filter_size, std=self.m_filter_sigma).reshape(self.m_filter_size, 1)
+            #gkern1d = signal.gaussian(self.m_filter_size, std=self.m_filter_sigma).reshape(self.m_filter_size, 1)
+            
+            
+            gkern1d = gaussian(
+                self.m_filter_size,
+                std=self.m_filter_sigma
+            ).reshape(self.m_filter_size, 1)
+                        
+            
+            
             gkern2d = np.outer(gkern1d, gkern1d)
             gkern2d /= (2*np.pi*(self.m_filter_sigma**2)) #Normalize
         

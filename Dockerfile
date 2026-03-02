@@ -1,4 +1,4 @@
-FROM osgeo/gdal:ubuntu-small-latest
+FROM osgeo/gdal:ubuntu-small-3.6.3
 RUN mkdir /pyfint
 COPY . /pyfint
 WORKDIR /pyfint
