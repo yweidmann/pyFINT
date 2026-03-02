@@ -28,7 +28,11 @@ if __name__ == "__main__":
     working_dir = os.path.join(os.getcwd(), "output")
     #Paths to input rasters 
     #Vegetation Height Model/Normalised Surface Model
-    nsm_file = os.path.join(os.getcwd(), "sample_data/VHM_1m.tif") 
+
+    # Demodata
+    #nsm_file = os.path.join(os.getcwd(), "sample_data/VHM_1m.tif")
+    # Schwamendingen
+    nsm_file = os.path.join(os.getcwd(), "sample_data/normalized_2685-1250_0.5_2056_5728.tif")
 
     #
     # Standard Detection with 1m input VHM without resizing of filtering
